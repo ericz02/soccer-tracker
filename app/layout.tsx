@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import SearchBar from "./components/searchBar/searchBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,6 +29,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="relative bg-black text-red-500">
+          <div className="aboslute top-0 left-0 w-full h-full">
+            <img 
+              src="/background.jpg"
+              alt="backgroundImage"
+              className="h-screen w-screen object-cover"
+            />
+          </div>
+          <div className="absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black/10 to-black">
+            <div className="relative">
+              <SearchBar />
+            </div>
+          </div>
+        </div>
         {children}
       </body>
     </html>
