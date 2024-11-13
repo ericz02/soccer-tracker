@@ -14,7 +14,7 @@ export default function SearchBar() {
             className="w-12 h-12 object-contain rounded-full"
           />
           <div className="px-2 md:block hidden font-bold text-xl">
-            BadmintonHub
+            SoccerHub
           </div>
         </a>
       </div>
