@@ -1,9 +1,16 @@
 import 'server-only'
 import { Standing } from '@/types';
 import moment from 'moment';
+import { USE_SAMPLE } from '../sampleData/useSample';
+import getStandingsSample from '../sampleData/getStandingsSample';
 
 export default async function getStandings(): Promise<Standing[]> {
 
+
+  if (USE_SAMPLE) {
+    return getStandingsSample();
+  }
+  
   const currentTime = moment();
   const month = currentTime.month();
   let year;
